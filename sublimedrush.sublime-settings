@@ -1,0 +1,17 @@
+{
+  //Path to Drush
+  "drush_path": "/usr/local/bin/drush",
+
+  //The drush working directory (your Drupal dir), add a path here or preferably to your project settings to run per project
+  "drush_working_dir": "/Users/Me/ExampleDrushProject",
+
+  //File types that drush should run on when saving
+  //Normally PHP + JS. Python is included for debugging purposes
+  "allowed_types":
+  [
+    "PHP", "Python", "CSS", "HTML"
+  ],
+
+  //Specifies how Sublime Drush will output confirmation; 1 = Status Bar only, 2 = Ouput Panel
+  "output_type": 1
+}

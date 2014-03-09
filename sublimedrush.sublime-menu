@@ -1,0 +1,6 @@
+[
+    {
+        "caption": "Sublime Drush: Clear Cache", "command": "clear_cache",
+        "args": {"action": "clear_cache"}
+    }
+]
