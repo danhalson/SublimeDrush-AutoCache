@@ -9,13 +9,16 @@ Installation:
 
 Depends on Drush [https://github.com/drush-ops/drush] and obviously Drupal.
 
-  cd ~/Library/Application Support/Sublime Text 3/Packages
-  git clone <repo url>
+  1. cd ~/Library/Application Support/Sublime Text 3/Packages
+  
+  2. git clone <repo url>
 
 Usage:
 
-  Specify your drush path in the settings.
-  Specify your drupal project dir in either your project folder (most uselful method) or in the main settings.
+  1. Specify your drush path in the settings.
+  
+  2. Specify your drupal project dir in either your project folder (most uselful method) or in the main settings.
+  
   Check the settings for other info.
 
 Thanks.
