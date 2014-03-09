@@ -16,7 +16,6 @@ class SublimeDrush():
     drush_path = ""
     file_types = []
     working_dir = ""
-    proceed = False
 
     ''' Retrieve and initialise settings '''
     def init_settings(self, view):
@@ -34,13 +33,13 @@ class SublimeDrush():
         elif global_settings.get("drush_working_dir"):
             self.working_dir = global_settings.get("drush_working_dir")
 
+    ''' Check if this is a supported filetype '''
+    def check_allowed_type(self, view):
         # If current file type in allowed list, proceed - is determined by syntax type e.g. Python.tmLanguage
         for allowed_type in self.allowed_types:
             current_type = view.settings().get('syntax').split('/')[2]
             if (allowed_type + '.tmLanguage') == current_type:
-                self.proceed = True
-                break
-
+                return True
 
     ''' Run commands '''
     def run_cmd(self, command):
@@ -77,8 +76,7 @@ class SublimeDrushCC(sublime_plugin.EventListener, SublimeDrush):
 
         self.init_settings(view)
 
-        if (self.proceed):
-            # view.run_command('show_overlay', {"overlay": "command_palette", "text": "Your text here..." })
+        if (self.check_allowed_type(view)):
             sublime.status_message(self.name + ": Clearing...")
             proc = self.run_cmd([self.drush_path + " " + "cc all"])
             status = self.trace(proc)
